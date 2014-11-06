@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   end
   
   def create
-    @note = Note.new(note_params)
+    @note = Note.new(group_params)
     if @note.save
       redirect_to @note
     else
