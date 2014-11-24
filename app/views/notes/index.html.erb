@@ -21,6 +21,8 @@
         <td><%= link_to 'Show', note_path(note.id) %></td>
         
         <td><%= link_to 'Edit', edit_note_path(note) %></td>
+
+        <td><%= link_to 'Destroy', note, method: :delete, data:{ confirm:'本当に削除していいですか？'}%></td>
      </tr>
    <% end %>
   </tbody>

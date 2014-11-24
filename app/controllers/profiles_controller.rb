@@ -1,19 +1,38 @@
 class ProfilesController < ApplicationController
   
+  def destroy
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+    redirect_to profiles_path
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to @profile
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
   def index
-    @profiles= Profile.all
+    @profiles = Profile.all
   end
 
   def show
-    @profiles = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def new
-    @profiles = Profile.new
+    @profile = Profile.new
   end
 
   def create
-    @profiles = Profile.new(profile_params)
+    @profile = Profile.new(profile_params)
     if @profile.save 
       redirect_to @profile
     else

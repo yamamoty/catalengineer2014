@@ -13,6 +13,8 @@
       <tr>
         <td><%= group.id %></td>
         <td><%= link_to 'Show', group_path(group.id) %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data:{ confirm:'本当に削除していいですか？'}%></td>
       </tr>
     <% end %>
   </tbody>
