@@ -1,4 +1,4 @@
-<h1>Listing groups</h1>
+<h1><p class="text-success">Listing groups</p></h1>
 
 <table>
   <thead>
@@ -16,6 +16,8 @@
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data:{ confirm:'本当に削除していいですか？'}%></td>
       </tr>
+
+
     <% end %>
   </tbody>
 </table>
